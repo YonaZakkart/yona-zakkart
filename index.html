@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Robert Yonathan Sánchez | Software Developer</title>
+  <meta name="description" content="Software Development Engineering student focused on building useful web applications and interactive experiences." />
+  
+  <!-- Open Graph (placeholder) -->
+  <meta property="og:title" content="Robert Yonathan Sánchez | Software Developer" />
+  <meta property="og:description" content="Software Development Engineering student focused on building useful web applications and interactive experiences." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/public/og-image.jpg" />
+
+  <!-- Favicon placeholder -->
+  <link rel="icon" href="/public/icons/favicon.svg" type="image/svg+xml" />
+
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <!-- Header / Nav -->
+  <header class="header">
+    <nav class="nav">
+      <a href="#home" class="nav-logo">YonaZakkart</a>
+      <ul class="nav-links">
+        <li><a href="#home" data-i18n="nav.home">Home</a></li>
+        <li><a href="#projects" data-i18n="nav.projects">Projects</a></li>
+        <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button id="lang-toggle" class="lang-btn" aria-label="Toggle language">ES</button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section id="home" class="hero">
+      <div class="hero-content">
+        <div class="hero-text">
+          <p class="hero-greeting" data-i18n="hero.greeting">Hi, I'm</p>
+          <h1 class="hero-name">Robert Yonathan Sánchez</h1>
+          <p class="hero-role" data-i18n="hero.role">Software Developer</p>
+          <p class="hero-bio" data-i18n="hero.bio">
+            Software Development Engineering student focused on building useful web applications and interactive experiences.
+          </p>
+          <div class="hero-links">
+            <a href="https://github.com/YonaZakkart" target="_blank" rel="noopener" class="icon-link" aria-label="GitHub">
+              <span>GH</span>
+            </a>
+            <a href="https://www.linkedin.com/in/robert-yonathan-sánchez-046a35399" target="_blank" rel="noopener" class="icon-link" aria-label="LinkedIn">
+              <span>in</span>
+            </a>
+            <a href="mailto:musicyonathan@gmail.com" class="icon-link" aria-label="Email">
+              <span>@</span>
+            </a>
+          </div>
+        </div>
+        <div class="hero-photo">
+          <img src="/public/profile/photo.jpg" alt="Robert Yonathan Sánchez" width="280" height="280" />
+        </div>
+      </div>
+
+      <!-- Tech stack -->
+      <div class="stack">
+        <span class="stack-item">TypeScript</span>
+        <span class="stack-item">JavaScript</span>
+        <span class="stack-item">HTML / CSS</span>
+        <span class="stack-item">Node.js</span>
+        <span class="stack-item">React</span>
+        <span class="stack-item">Angular</span>
+        <span class="stack-item">MySQL</span>
+        <span class="stack-item">Git</span>
+        <span class="stack-item">Docker</span>
+      </div>
+    </section>
+
+    <!-- What I do -->
+    <section id="services" class="services">
+      <h2 data-i18n="services.title">What I do?</h2>
+      <div class="services-grid">
+        <article class="service-card">
+          <h3 data-i18n="services.web.title">Web Development</h3>
+          <p data-i18n="services.web.desc">Building responsive web applications and interfaces with modern tools.</p>
+        </article>
+        <article class="service-card">
+          <h3 data-i18n="services.backend.title">Backend</h3>
+          <p data-i18n="services.backend.desc">APIs, databases and server-side logic with Node.js and TypeScript.</p>
+        </article>
+        <article class="service-card">
+          <h3 data-i18n="services.games.title">Games & Interactive</h3>
+          <p data-i18n="services.games.desc">Browser games and interactive experiences with vanilla JS.</p>
+        </article>
+        <article class="service-card">
+          <h3 data-i18n="services.edu.title">Educational Software</h3>
+          <p data-i18n="services.edu.desc">Tools and apps designed for learning and classroom use.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="projects">
+      <h2 data-i18n="projects.title">My work</h2>
+      <div class="projects-grid" id="projects-grid">
+        <!-- Projects injected by JS -->
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="contact">
+      <h2 data-i18n="contact.title">Let's talk</h2>
+      <p class="contact-intro" data-i18n="contact.intro">Have a question or a project in mind? Feel free to reach out.</p>
+      
+      <div class="contact-content">
+        <form id="contact-form" action="https://formspree.io/f/xljbebqk" method="POST" class="contact-form">
+          <input type="text" name="name" data-i18n-placeholder="contact.name" placeholder="Name" required />
+          <input type="email" name="email" data-i18n-placeholder="contact.email" placeholder="Email" required />
+          <textarea name="message" rows="5" data-i18n-placeholder="contact.message" placeholder="Message" required></textarea>
+          <button type="submit" data-i18n="contact.send">Send message</button>
+        </form>
+
+        <div class="contact-info">
+          <p><strong data-i18n="contact.location">Location</strong>: San Miguel, El Salvador</p>
+          <p><a href="mailto:musicyonathan@gmail.com">musicyonathan@gmail.com</a></p>
+          <a href="/public/cv-robert-yonathan.pdf" class="btn-cv" download data-i18n="contact.cv">Download CV</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© <span id="year"></span> Robert Yonathan Sánchez · YonaZakkart</p>
+  </footer>
+
+  <!-- Project Modal -->
+  <div id="project-modal" class="modal" hidden>
+    <div class="modal-overlay"></div>
+    <div class="modal-content">
+      <button class="modal-close" aria-label="Close">&times;</button>
+      <img id="modal-img" src="" alt="" />
+      <h3 id="modal-title"></h3>
+      <p id="modal-desc"></p>
+      <div id="modal-tech" class="modal-tech"></div>
+      <div id="modal-links" class="modal-links"></div>
+    </div>
+  </div>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
