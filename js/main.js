@@ -97,9 +97,20 @@ function openModal(project) {
   document.getElementById("modal-title").textContent = lang === "es" ? project.title_es : project.title;
   document.getElementById("modal-desc").textContent = lang === "es" ? project.description_es : project.description;
 
-  const techEl = document.getElementById("modal-tech");
-  techEl.innerHTML = project.tech.map(t => `<span>${t}</span>`).join("");
+  // Badges
+  const badgesEl = document.getElementById("modal-badges");
+  const statusLabel = t(`status.${project.status}`);
+  const roleLabel = t(`role.${project.role}`);
+  badgesEl.innerHTML = `
+    <span class="badge ${project.status}">${statusLabel}</span>
+    <span class="badge ${project.role}">${roleLabel}</span>
+  `;
 
+  // Tech
+  const techEl = document.getElementById("modal-tech");
+  techEl.innerHTML = project.tech.map(tech => `<span>${tech}</span>`).join("");
+
+  // Links
   const linksEl = document.getElementById("modal-links");
   let links = `<a href="${project.github}" target="_blank" rel="noopener">GitHub</a>`;
   if (project.demo) {

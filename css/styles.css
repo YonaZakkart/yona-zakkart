@@ -1,8 +1,3 @@
-/* ============================================
-   Yona-Zakkart Portfolio — Mobile First
-   Dark Minimal inspired
-   ============================================ */
-
 :root {
   --bg: #0a0a0a;
   --bg-elevated: #111111;
@@ -45,7 +40,6 @@ a {
   text-decoration: none;
 }
 
-/* ---------- Header ---------- */
 .header {
   position: sticky;
   top: 0;
@@ -71,9 +65,10 @@ a {
 }
 
 .nav-links {
-  display: none;
+  display: flex;
   list-style: none;
-  gap: 1.5rem;
+  gap: 1rem;
+  font-size: 0.9rem;
 }
 
 .nav-links a {
@@ -145,21 +140,22 @@ a {
 }
 
 .icon-link {
-  width: 42px;
-  height: 42px;
+  width: 44px;
+  height: 44px;
   border-radius: 10px;
   background: var(--bg-card);
   border: 1px solid var(--border);
   display: grid;
   place-items: center;
-  font-size: 0.85rem;
-  font-weight: 600;
-  transition: border-color 0.2s, background 0.2s;
+  color: var(--text-muted);
+  transition: border-color 0.2s, background 0.2s, color 0.2s, transform 0.15s;
 }
 
 .icon-link:hover {
   border-color: var(--accent);
   background: #1a1a1a;
+  color: var(--text);
+  transform: translateY(-1px);
 }
 
 .hero-photo {
@@ -256,8 +252,9 @@ a {
 }
 
 .project-card:hover {
-  border-color: #3a3a3a;
-  transform: translateY(-2px);
+  border-color: #3f3f3f;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
 }
 
 .project-card img {
@@ -291,12 +288,29 @@ a {
   color: var(--text-muted);
 }
 
-.badge.deployed { border-color: #2d6a4f; color: #95d5b2; }
-.badge.development { border-color: #7c6a1e; color: #e9c46a; }
-.badge.no-demo { border-color: #4a4a4a; }
+.badge.deployed {
+  border-color: #2d6a4f;
+  color: #95d5b2;
+}
 
-.badge.owner { border-color: #3a5a8c; color: #90b4e0; }
-.badge.contributor { border-color: #5a4a7a; color: #c9b6e4; }
+.badge.development {
+  border-color: #7c6a1e;
+  color: #e9c46a;
+}
+
+.badge.no-demo {
+  border-color: #4a4a4a;
+}
+
+.badge.owner {
+  border-color: #3a5a8c;
+  color: #90b4e0;
+}
+
+.badge.contributor {
+  border-color: #5a4a7a;
+  color: #c9b6e4;
+}
 
 /* ---------- Contact ---------- */
 .contact {
@@ -482,9 +496,63 @@ a {
   border-color: var(--accent);
 }
 
-/* ============================================
-   Desktop (≥ 768px)
-   ============================================ */
+/* Modal animation */
+.modal:not([hidden]) {
+  animation: fadeIn 0.2s ease;
+}
+
+.modal:not([hidden]) .modal-content {
+  animation: scaleIn 0.22s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96) translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.modal-close {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.9rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  font-size: 1.4rem;
+  cursor: pointer;
+  line-height: 1;
+  display: grid;
+  place-items: center;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.modal-close:hover {
+  border-color: var(--accent);
+  color: var(--text);
+}
+
+/* Badges dentro del modal */
+.modal-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 0.85rem;
+}
+
+/* Desktop (≥ 768px)*/
 @media (min-width: 768px) {
   .nav-links {
     display: flex;
@@ -494,7 +562,7 @@ a {
     flex-direction: row;
     text-align: left;
     align-items: center;
-    gap: 3rem;
+    gap: 1.5rem
   }
 
   .hero-text {
