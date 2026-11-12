@@ -78,7 +78,6 @@ function renderProjects() {
     `;
   }).join("");
 
-  // Click handlers
   grid.querySelectorAll(".project-card").forEach(card => {
     card.addEventListener("click", () => {
       const id = card.dataset.id;
