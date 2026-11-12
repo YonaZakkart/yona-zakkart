@@ -28,7 +28,13 @@ const translations = {
     "status.development": "In development",
     "status.no-demo": "No demo",
     "role.owner": "Owner",
-    "role.contributor": "Contributor"
+    "role.contributor": "Contributor",
+    "education.title": "Education & Path",
+    "education.uni.title": "Software Development Engineering",
+    "education.uni.desc": "Currently in 5th academic cycle. Focus on OOP, Event-Driven Programming, Data Structures and Web Server Management.",
+    "education.bootcamp.title": "Full Stack Developer Bootcamp",
+    "education.certs.title": "Key Certifications",
+    "education.certs.desc": "Linux Essentials (Cisco) · Fundamentals of Software Engineering (Platzi) · Git & GitHub (Platzi)",
   },
   es: {
     "nav.home": "Inicio",
@@ -59,7 +65,13 @@ const translations = {
     "status.development": "En desarrollo",
     "status.no-demo": "Sin demo",
     "role.owner": "Owner",
-    "role.contributor": "Contributor"
+    "role.contributor": "Contributor",
+    "education.title": "Formación y trayectoria",
+    "education.uni.title": "Ingeniería en Desarrollo de Software",
+    "education.uni.desc": "Cursando 5.º ciclo académico. Enfoque en POO, Programación Orientada a Eventos, Estructuras de Datos y Gestión de Servidores Web.",
+    "education.bootcamp.title": "Bootcamp Full Stack Developer",
+    "education.certs.title": "Certificaciones clave",
+    "education.certs.desc": "Linux Essentials (Cisco) · Fundamentos de Ingeniería de Software (Platzi) · Git y GitHub (Platzi)",
   }
 };
 

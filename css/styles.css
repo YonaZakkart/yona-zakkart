@@ -4,7 +4,8 @@
   --bg-card: #161616;
   --text: #e8e8e8;
   --text-muted: #a0a0a0;
-  --accent: #7c9cff;
+  --accent: #c9a227;
+  --accent-soft: #e8d48b;
   --border: #2a2a2a;
   --radius: 12px;
   --font: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
@@ -230,6 +231,66 @@ a {
   font-size: 0.95rem;
 }
 
+/* ---------- Education ---------- */
+.education {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 3rem 1.25rem;
+}
+
+.education h2 {
+  font-size: 1.6rem;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+}
+
+.education-list {
+  display: grid;
+  gap: 1.1rem;
+}
+
+.education-item {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.4rem;
+  transition: border-color 0.2s;
+}
+
+.education-item:hover {
+  border-color: #3a3a3a;
+}
+
+.education-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.25rem;
+}
+
+.education-header h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.education-period {
+  font-size: 0.85rem;
+  color: var(--accent);
+}
+
+.education-place {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-bottom: 0.35rem;
+}
+
+.education-desc {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
 /* ---------- Projects ---------- */
 .projects {
   max-width: 1100px;
@@ -316,78 +377,103 @@ a {
 .contact {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 3rem 1.25rem 4rem;
+  padding: 3.5rem 1.25rem 4.5rem;
 }
 
 .contact-intro {
   color: var(--text-muted);
-  margin-bottom: 1.75rem;
+  margin-bottom: 2rem;
+  max-width: 42ch;
 }
 
 .contact-content {
   display: grid;
-  gap: 2rem;
+  gap: 2.5rem;
 }
 
 .contact-form {
   display: grid;
-  gap: 0.85rem;
+  gap: 1rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.75rem;
 }
 
 .contact-form input,
 .contact-form textarea {
-  background: var(--bg-card);
+  background: #0f0f0f;
   border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  padding: 0.85rem 1.1rem;
   color: var(--text);
   font: inherit;
   resize: vertical;
+  transition: border-color 0.2s, box-shadow 0.2s;
 }
 
 .contact-form input:focus,
 .contact-form textarea:focus {
   outline: none;
   border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(201, 162, 39, 0.15);
 }
 
 .contact-form button {
-  background: var(--accent);
+  background: linear-gradient(135deg, #c9a227, #a8861c);
   color: #0a0a0a;
   border: none;
-  border-radius: 8px;
-  padding: 0.8rem 1.2rem;
+  border-radius: 10px;
+  padding: 0.9rem 1.3rem;
   font-weight: 600;
   cursor: pointer;
   font-size: 1rem;
-  transition: opacity 0.2s;
+  transition: transform 0.15s, box-shadow 0.2s, opacity 0.2s;
+  margin-top: 0.25rem;
 }
 
 .contact-form button:hover {
-  opacity: 0.9;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(201, 162, 39, 0.25);
+  opacity: 0.95;
 }
 
 .contact-info {
   color: var(--text-muted);
   font-size: 0.95rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
 }
 
-.contact-info p {
-  margin-bottom: 0.5rem;
+.contact-info a {
+  color: var(--text-muted);
+  transition: color 0.2s;
+}
+
+.contact-info a:hover {
+  color: var(--accent-soft);
 }
 
 .btn-cv {
-  display: inline-block;
-  margin-top: 1rem;
-  padding: 0.6rem 1.1rem;
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  font-size: 0.9rem;
-  transition: border-color 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.25rem;
+  padding: 0.75rem 1.35rem;
+  border: 1px solid var(--accent);
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--accent-soft);
+  background: transparent;
+  transition: background 0.2s, color 0.2s, transform 0.15s;
 }
 
 .btn-cv:hover {
-  border-color: var(--accent);
+  background: rgba(201, 162, 39, 0.1);
+  color: #fff;
+  transform: translateY(-1px);
 }
 
 /* ---------- Footer ---------- */
@@ -506,8 +592,13 @@ a {
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes scaleIn {
@@ -515,6 +606,7 @@ a {
     opacity: 0;
     transform: scale(0.96) translateY(8px);
   }
+
   to {
     opacity: 1;
     transform: scale(1) translateY(0);
